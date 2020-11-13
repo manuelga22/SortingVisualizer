@@ -1,0 +1,16 @@
+.Visualizer{
+   width:inherit;
+  
+}
+.flex{
+    display:flex;
+    justify-content: center;
+    
+}
+
+.bar{
+    height:40px;
+    width:10px;
+    background:red;
+    margin: 1em;
+}
