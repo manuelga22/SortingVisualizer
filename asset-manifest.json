@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/manuelga22.github.io/sortingproject/static/css/main.0024ed51.chunk.css",
-    "main.js": "/manuelga22.github.io/sortingproject/static/js/main.268aacfc.chunk.js",
-    "main.js.map": "/manuelga22.github.io/sortingproject/static/js/main.268aacfc.chunk.js.map",
-    "runtime-main.js": "/manuelga22.github.io/sortingproject/static/js/runtime-main.9bafa4f7.js",
-    "runtime-main.js.map": "/manuelga22.github.io/sortingproject/static/js/runtime-main.9bafa4f7.js.map",
-    "static/js/2.aad782de.chunk.js": "/manuelga22.github.io/sortingproject/static/js/2.aad782de.chunk.js",
-    "static/js/2.aad782de.chunk.js.map": "/manuelga22.github.io/sortingproject/static/js/2.aad782de.chunk.js.map",
-    "static/js/3.6fdd4bc7.chunk.js": "/manuelga22.github.io/sortingproject/static/js/3.6fdd4bc7.chunk.js",
-    "static/js/3.6fdd4bc7.chunk.js.map": "/manuelga22.github.io/sortingproject/static/js/3.6fdd4bc7.chunk.js.map",
-    "index.html": "/manuelga22.github.io/sortingproject/index.html",
-    "static/css/main.0024ed51.chunk.css.map": "/manuelga22.github.io/sortingproject/static/css/main.0024ed51.chunk.css.map",
-    "static/js/2.aad782de.chunk.js.LICENSE.txt": "/manuelga22.github.io/sortingproject/static/js/2.aad782de.chunk.js.LICENSE.txt"
+    "main.css": "/sortingproject/static/css/main.0024ed51.chunk.css",
+    "main.js": "/sortingproject/static/js/main.268aacfc.chunk.js",
+    "main.js.map": "/sortingproject/static/js/main.268aacfc.chunk.js.map",
+    "runtime-main.js": "/sortingproject/static/js/runtime-main.740ecd76.js",
+    "runtime-main.js.map": "/sortingproject/static/js/runtime-main.740ecd76.js.map",
+    "static/js/2.aad782de.chunk.js": "/sortingproject/static/js/2.aad782de.chunk.js",
+    "static/js/2.aad782de.chunk.js.map": "/sortingproject/static/js/2.aad782de.chunk.js.map",
+    "static/js/3.6fdd4bc7.chunk.js": "/sortingproject/static/js/3.6fdd4bc7.chunk.js",
+    "static/js/3.6fdd4bc7.chunk.js.map": "/sortingproject/static/js/3.6fdd4bc7.chunk.js.map",
+    "index.html": "/sortingproject/index.html",
+    "static/css/main.0024ed51.chunk.css.map": "/sortingproject/static/css/main.0024ed51.chunk.css.map",
+    "static/js/2.aad782de.chunk.js.LICENSE.txt": "/sortingproject/static/js/2.aad782de.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.9bafa4f7.js",
+    "static/js/runtime-main.740ecd76.js",
     "static/js/2.aad782de.chunk.js",
     "static/css/main.0024ed51.chunk.css",
     "static/js/main.268aacfc.chunk.js"
