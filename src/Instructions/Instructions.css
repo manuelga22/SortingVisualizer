@@ -1,0 +1,18 @@
+
+.instructions{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin:1em;
+   
+}
+.instructions>div{
+    border-radius: 10px;
+    border: solid 2px #6495ED;
+    padding:20px;
+}
+
+.instructions > p,h2{
+    text-align: center;
+}
