@@ -2,7 +2,7 @@ import { useEffect,useState} from 'react';
 import {quickSort} from './Algorithms/QuickSort';
 import {bubbleSort} from './Algorithms/BubbleSort';
 import {selectionSort} from './Algorithms/SelectionSort';
-import {mergeSort} from './Algorithms/MergeSort';
+import {getMergeSortAnimations, animationsMergeSort} from './Algorithms/MergeSort';
 import Instructions from '../Instructions/Instructions';
 
 import './SortingVisualizer.css'
@@ -64,11 +64,11 @@ function SortingViasualizer() {
                 arrayBars[first_swap_index].style.background="black";
                 arrayBars[second_swap_index].style.background="yellow";    
                 if(animations[a][0] == "swap")setBars([...swap(first_swap_index, second_swap_index, bars) ])
-                sleep(20).then(()=>{
+                sleep(30).then(()=>{
                     arrayBars[first_swap_index].style.background="lightcoral";
                     arrayBars[second_swap_index].style.background="lightcoral";
                 })
-            },a*40)
+            },a*30)
         }
     };
     const selectionSortAnimation =()=>{
@@ -83,20 +83,46 @@ function SortingViasualizer() {
                 arrayBars[first_swap_index].style.background="black";
                 arrayBars[second_swap_index].style.background="yellow";  
                 if(animations[a][0] == "swap")setBars([...swap(first_swap_index, second_swap_index, bars) ])
-                sleep(10).then(()=>{
+                sleep(80).then(()=>{
                     arrayBars[first_swap_index].style.background="lightcoral";
                     arrayBars[second_swap_index].style.background="lightcoral";
                 })
-            },a*30)
+            },a*160)
         }
     };
-    const mergeSortAnimation = ()=>{
+  
+   
+    const mergeSortAnimation=()=> {
         const arrayBars = document.getElementsByClassName('bar')
         let copyBars = [...bars] // copy of bars
-        let {sortedArray,animations} = mergeSort(bars);
+        let animations = getMergeSortAnimations(copyBars);
         console.log(animations)
-
-    };
+        for(let i=0;i<animations.length;i++){
+          // every new odd element in the array of animations means 
+          //that two new elements are being compared
+          const isColorChange = i % 3 !== 2;
+          if (isColorChange) {
+            const [barOneIdx, barTwoIdx] = animations[i];
+            const barOneStyle = arrayBars[barOneIdx].style;
+            const barTwoStyle = arrayBars[barTwoIdx].style;
+            //
+            const color = i % 3 === 0 ? 'yellow' : 'lightcoral';
+            setTimeout(() => {
+              barOneStyle.backgroundColor = color;
+              barTwoStyle.backgroundColor = color;
+            }, i * 30);
+          } else {
+            setTimeout(() => {
+              // here is where the swapping happens, newHeight is the height of the element 
+              //that's is now gunna be at the index stored in baroneIdx
+              const [barOneIdx, newHeight] = animations[i];
+              const barOneStyle = arrayBars[barOneIdx].style;
+              barOneStyle.height = `${newHeight}px`;
+            }, i * 30);
+          }
+        }
+      };
+    
 
 
     function swap(index1, index2,array){
