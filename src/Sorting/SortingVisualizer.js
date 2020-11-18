@@ -158,7 +158,7 @@ function SortingViasualizer() {
                         <button className="btn"  onClick={ ()=>{ bubbleSortAnimation() }}>Bubble Sort</button>
                     </li>
                     <li>
-                        <button className="btn"  onClick={ ()=>{ generateBars(50) }}>Reset Array</button>
+                        <button className="btn"  onClick={ ()=>{ generateBars(50) }}>Reset</button>
                     </li>
                 </ul>
             </nav>
