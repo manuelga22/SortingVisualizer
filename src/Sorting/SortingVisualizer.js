@@ -53,22 +53,33 @@ function SortingViasualizer() {
           
         } 
     };
-    const bubbleSortAnimation = ()=>{
+    const bubbleSortAnimation = async()=>{
         const arrayBars = document.getElementsByClassName('bar')
         let copyOfBars = [...bars] //copy of bars
         const {sortedArray,animations} =  bubbleSort(copyOfBars);
         for(let a=0;a<animations.length;a++){
-            setTimeout(()=>{
+            setTimeout(async()=>{
                 let first_swap_index = animations[a][1];
                 let second_swap_index = animations[a][2];  
-                arrayBars[first_swap_index].style.background="black";
-                arrayBars[second_swap_index].style.background="yellow";    
-                if(animations[a][0] == "swap")setBars([...swap(first_swap_index, second_swap_index, bars) ])
-                sleep(30).then(()=>{
-                    arrayBars[first_swap_index].style.background="lightcoral";
-                    arrayBars[second_swap_index].style.background="lightcoral";
+                arrayBars[first_swap_index].style.backgroundColor="black";
+                arrayBars[second_swap_index].style.backgroundColor="yellow";   
+                //console.log(arrayBars[first_swap_index].style.backgroundColor,  arrayBars[second_swap_index].style.backgroundColor)
+                //await sleep(30)     
+                sleep(3.3).then(()=>{
+                    if(animations[a][0] == "swap"){
+                        setBars([...swap(first_swap_index, second_swap_index, bars) ])
+                        arrayBars[first_swap_index].style.backgroundColor="yellow";
+                        arrayBars[second_swap_index].style.backgroundColor="black";   
+                    }
+                }).then(()=>{
+                    sleep(3.3).then(()=>{
+                        arrayBars[first_swap_index].style.backgroundColor="lightcoral";
+                        arrayBars[second_swap_index].style.backgroundColor="lightcoral";
+                    })
                 })
-            },a*30)
+             
+                //await sleep(30)
+            },a*20)
         }
     };
     const selectionSortAnimation =()=>{
@@ -83,11 +94,17 @@ function SortingViasualizer() {
                 arrayBars[first_swap_index].style.background="black";
                 arrayBars[second_swap_index].style.background="yellow";  
                 if(animations[a][0] == "swap")setBars([...swap(first_swap_index, second_swap_index, bars) ])
-                sleep(80).then(()=>{
-                    arrayBars[first_swap_index].style.background="lightcoral";
-                    arrayBars[second_swap_index].style.background="lightcoral";
+                sleep(5).then(()=>{
+                    arrayBars[first_swap_index].style.backgroundColor="yellow";
+                    arrayBars[second_swap_index].style.backgroundColor="black";   
+                }).then(()=>{
+                    sleep(30).then(()=>{
+                        arrayBars[first_swap_index].style.background="lightcoral";
+                        arrayBars[second_swap_index].style.background="lightcoral";
+                    })
                 })
-            },a*160)
+               
+            },a*60)
         }
     };
   
@@ -126,11 +143,10 @@ function SortingViasualizer() {
 
 
     function swap(index1, index2,array){
-        sleep(800)
         let temp = array[index1];
         array[index1] = array[index2];
         array[index2] = temp;
-        return array   
+        return array;  
     };
  
 
@@ -182,7 +198,7 @@ function SortingViasualizer() {
 export default SortingViasualizer;
 
 //makes the program wait
-function sleep(ms) {
+const sleep=(ms)=> {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
 
